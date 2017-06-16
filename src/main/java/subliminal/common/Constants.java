@@ -6,9 +6,25 @@ package subliminal.common;
 
 /**
  *
- * @author t0763ss
+ * @author Satyen Shimpi
  */
 public class Constants {
+	//Application related
+	public static final String APP_NAME = "SubliminalNX";
+	
+	//Menus
+	public static final String MENU_SEPARATOR = "-";
+	public static final String MENU_SETTINGS = "Settings";
+	public static final String MENU_MOVE = "Move";
+	public static final String MENU_EMPTY = "";
+	public static final String MENU_START_AND_SHOW = "Start and Show";
+	public static final String MENU_STOP_AND_HIDE = "Stop and Hide";
+	public static final String MENU_DISABLE_ON_TOP = "Disable On Top";
+	public static final String MENU_SET_ON_TOP = "Set On Top";
+	public static final String MENU_DONE_RESIZE = "Done Resize";
+	public static final String MENU_RESIZE = "Resize";
+	
+	//
     public static final String MSG_ORDERED = "Ordered";
     public static final String MSG_RANDOM = "Random";
     

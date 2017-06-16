@@ -18,48 +18,46 @@ import java.awt.Font;
  * @version 0.0
  * @since version 0.0
  */
-
-
 public class Settings {
     /**
      * Message timeout in seconds
      */
-    private static int displayEveryXXsecs = settingsVariables.getInstance().getDisplayEveryXXsecs();
+    private static int displayEveryXXsecs = SettingsVariables.getInstance().getDisplayEveryXXsecs();
     
     /**
      * Message timeout in seconds
      */
-    private static int displayTime = settingsVariables.getInstance().getDisplayTime();
+    private static int displayTime = SettingsVariables.getInstance().getDisplayTime();
     
     /**
      * Foreground color of the text
      */
-    private static Color foreground = settingsVariables.getInstance().getForeground();
+    private static Color foreground = SettingsVariables.getInstance().getForeground();
     
     /**
      * Background color of the text
      */
-    private static Color background = settingsVariables.getInstance().getBackground();
+    private static Color background = SettingsVariables.getInstance().getBackground();
     
     /**
      * Font for the text
      */
-    private static Font font = settingsVariables.getInstance().getFont();
+    private static Font font = SettingsVariables.getInstance().getFont();
     
     
-    private static boolean onTop = settingsVariables.getInstance().getOnTop();
+    private static boolean onTop = SettingsVariables.getInstance().getOnTop();
 
     
-    private static int alpa = settingsVariables.getInstance().getAlpa();
+    private static int alpa = SettingsVariables.getInstance().getAlpa();
     
-    private static  String msgOrder = settingsVariables.getInstance().getMsgOrder();
+    private static  String msgOrder = SettingsVariables.getInstance().getMsgOrder();
     
-    private static  String msgPosition = settingsVariables.getInstance().getMsgPosition();
+    private static  String msgPosition = SettingsVariables.getInstance().getMsgPosition();
     
-    private static boolean startNshow = settingsVariables.getInstance().isStartNshow();
+    private static boolean startNshow = SettingsVariables.getInstance().isStartNshow();
     
-    private static double msgWidth = 0.0;
-    private static double msgHeight = 0.0;
+//    private static double msgWidth = 0.0;
+//    private static double msgHeight = 0.0;
     /**
      * get Message timeout in seconds
      */

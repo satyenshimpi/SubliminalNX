@@ -1,2 +1,3 @@
-C:\Users\sshimpi\Downloads\images\images.png
+C:/Data/Satyen/GitHub_repos/SubliminalNX/src/main/java/subliminal/images.png
 C:\\Users\\sshimpi\\Downloads\\images\\download.png
+C:\Users\Svara\Pictures\briya.tif

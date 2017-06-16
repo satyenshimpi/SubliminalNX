@@ -29,12 +29,14 @@ import java.io.Serializable;
  */
 
 
-public class settingsVariables implements Serializable{
-    
-    static String strFile = "settings.dll";
+public class SettingsVariables implements Serializable{
 
-    private static settingsVariables instance;
-    private settingsVariables() {
+	private static final long serialVersionUID = 6181303695763350993L;
+
+	static String strFile = "settings.dll";
+
+    private static SettingsVariables instance;
+    private SettingsVariables() {
         displayEveryXXsecs = 10;
         displayTime=5000;
         foreground = Color.darkGray;
@@ -44,12 +46,12 @@ public class settingsVariables implements Serializable{
         alpa = 255;
     }
         
-    public static settingsVariables getInstance(){
+    public static SettingsVariables getInstance(){
         //deserialise if any        
-        if(instance==null){
+        if(instance == null){
             deserializeInstanceIfExists();
-            if(instance==null)
-                instance = new settingsVariables();
+            if(instance == null)
+                instance = new SettingsVariables();
         }
         return instance;
     }
@@ -62,7 +64,7 @@ public class settingsVariables implements Serializable{
         try {
             fis = new FileInputStream(strFile);
             in = new ObjectInputStream(fis);
-            instance = (settingsVariables) in.readObject();
+            instance = (SettingsVariables) in.readObject();
             in.close();
         } catch(FileNotFoundException fnfe){
             instance = null;
@@ -242,12 +244,6 @@ public class settingsVariables implements Serializable{
 
     public void setMsgDisplayType(String msgDisplayType) {
         this.msgDisplayType = msgDisplayType;
-    }
-    
-    public static void main(String[] args) {
-        settingsVariables time = settingsVariables.getInstance();     
-        if(time==null)
-            time.serialize();
     }
 
 	public int getDisplayType() {

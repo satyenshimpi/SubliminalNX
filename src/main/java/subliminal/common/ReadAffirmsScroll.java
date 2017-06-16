@@ -11,7 +11,6 @@ package subliminal.common;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
@@ -68,20 +67,20 @@ public class ReadAffirmsScroll extends Thread{
             for (i = 0; i < lines.size(); i++) {                
                 System.out.println(rnd.nextInt(lines.size()*10)%(lines.size()+1));
                 
-                if(settingsVariables.getInstance().getMsgOrder().equals(Constants.MSG_RANDOM)) {
+                if(SettingsVariables.getInstance().getMsgOrder().equals(Constants.MSG_RANDOM)) {
                     VisiblePane.lblMessage.setText(lines.get(1));
                 }
                 else {
                     VisiblePane.lblMessage.setText(lines.get(i));
                 }
                 
-                if(settingsVariables.getInstance().isStartNshow())
-                    this.sleep(settingsVariables.getInstance().getDisplayTime());
+                if(SettingsVariables.getInstance().isStartNshow())
+                	Thread.sleep(SettingsVariables.getInstance().getDisplayTime());
                 VisiblePane.lblMessage.setText("");
-                while(!settingsVariables.getInstance().isStartNshow())
-                    this.sleep(2000);
-                if(settingsVariables.getInstance().isStartNshow())
-                    this.sleep(settingsVariables.getInstance().getDisplayEveryXXsecs() * 1000);
+                while(!SettingsVariables.getInstance().isStartNshow())
+                	Thread.sleep(2000);
+                if(SettingsVariables.getInstance().isStartNshow())
+                	Thread.sleep(SettingsVariables.getInstance().getDisplayEveryXXsecs() * 1000);
                 if(lines.size()==i+1)
                     i=-1;
             }

@@ -18,13 +18,11 @@ import javax.swing.*;
  * @version 0.0
  * @since version 0.0
  */
-/**
- *
- * @author t0763ss
- */
 public class ScrollTextDemo extends JPanel implements Runnable {
 
-    public ScrollTextDemo() {
+	private static final long serialVersionUID = 2487844533945171010L;
+	
+	public ScrollTextDemo() {
         this.setLayout(new BorderLayout());
         this.add(lbl, BorderLayout.CENTER);
         Thread t = new Thread(this);

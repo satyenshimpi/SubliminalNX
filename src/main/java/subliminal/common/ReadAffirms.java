@@ -11,7 +11,6 @@ package subliminal.common;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -72,27 +71,27 @@ public class ReadAffirms extends Thread{
             for (i = 0; i < lines.size(); i++) {                
 //                System.out.println("random :"+rnd.nextInt(lines.size()*10)%(lines.size()+1));
                 
-                if(settingsVariables.getInstance().getMsgOrder().equals(Constants.MSG_RANDOM))                  // for random msg
+                if(SettingsVariables.getInstance().getMsgOrder().equals(Constants.MSG_RANDOM))                  // for random msg
                     VisiblePane.lblMessage.setText(lines.get(rnd.nextInt(lines.size()*10)%(lines.size()+1)));
                 else                                                                                            //for ordered msg
                     VisiblePane.lblMessage.setText(lines.get(i));
                 
-                if (settingsVariables.getInstance().isStartNshow()) {
-                    if (settingsVariables.getInstance().getMsgDisplayType().equals(Constants.MSG_DISPLAY_TYPE_FLSHNIG)) {
-                        this.sleep(settingsVariables.getInstance().getDisplayTime());
+                if (SettingsVariables.getInstance().isStartNshow()) {
+                    if (SettingsVariables.getInstance().getMsgDisplayType().equals(Constants.MSG_DISPLAY_TYPE_FLSHNIG)) {
+                        Thread.sleep(SettingsVariables.getInstance().getDisplayTime());
                     } else {
 //                        System.out.println(VisiblePane.lblMessage.getText()+": "+VisiblePane.lblMessage.getText().trim().length()* ScrollJLabel.iTimeInterval);
-                        this.sleep(VisiblePane.lblMessage.getText().trim().length()* ScrollJLabel.iTimeInterval);
+                    	Thread.sleep(VisiblePane.lblMessage.getText().trim().length()* ScrollJLabel.iTimeInterval);
                     }
                 }
                 
                 VisiblePane.lblMessage.setText("");
                 
-                while(!settingsVariables.getInstance().isStartNshow())
-                    this.sleep(2000);
+                while(!SettingsVariables.getInstance().isStartNshow())
+                	Thread.sleep(2000);
                 
-                if(settingsVariables.getInstance().isStartNshow())
-                    this.sleep(settingsVariables.getInstance().getDisplayEveryXXsecs() * 1000);
+                if(SettingsVariables.getInstance().isStartNshow())
+                	Thread.sleep(SettingsVariables.getInstance().getDisplayEveryXXsecs() * 1000);
                 
                 //start i from begining
                 if(lines.size()==i+1)

@@ -4,7 +4,16 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/**
+ * The <code>CustomTitlebar</code>
+ * @author Satyen S Shimpi
+ * @version 0.0
+ * @since version 0.0
+ */
 class CustomTitlebar extends JFrame {
+
+	private static final long serialVersionUID = 1338055623479576096L;
+	
 	JPanel p;
 	JMenuBar mb;
 	JButton close, min, max;

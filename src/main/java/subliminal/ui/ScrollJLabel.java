@@ -10,11 +10,13 @@ import javax.swing.JLabel;
  * Not in use yet
  * JLabel extension for scrolling text or splashing images
  * Runs as separate Thread
- * @author T0763SS
+ * @author Satyen S Shimpi
  */
 public class ScrollJLabel extends JLabel implements Runnable {
 
-    public ScrollJLabel(String text, int iTimeInterval) {
+	private static final long serialVersionUID = 3712755955524326265L;
+	
+	public ScrollJLabel(String text, int iTimeInterval) {
         this(text);
         this.iTimeInterval = iTimeInterval;
     }
@@ -39,6 +41,7 @@ public class ScrollJLabel extends JLabel implements Runnable {
     /**
      * Scrolls the text in JLabel
      */
+	@SuppressWarnings("unused")
 	private void scrollText() {
 		int i = 0;
         while (true) {
