@@ -575,7 +575,7 @@ public class SettingsForm extends javax.swing.JFrame {
         SettingsVariables.getInstance().serialize();
         this.dispose();
         System.out.println("calling init again.");
-        VisiblePane.getInstance().initSettings();
+//        VisiblePane.getInstance().initSettings();
         VisiblePane.getInstance().setAlwaysOnTop(SettingsVariables.getInstance().getOnTop());
         
 //        StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();        

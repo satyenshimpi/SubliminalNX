@@ -1,14 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
 * File : Subliminal.settingsVariables.java
 * Created : Jan 16, 2013
 * By : Satyen S Shimpi
 */
-
 package subliminal.common;
 
 import java.awt.Color;
@@ -27,8 +21,6 @@ import java.io.Serializable;
  * @version 0.0
  * @since version 0.0
  */
-
-
 public class SettingsVariables implements Serializable{
 
 	private static final long serialVersionUID = 6181303695763350993L;

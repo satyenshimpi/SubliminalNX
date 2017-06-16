@@ -68,15 +68,15 @@ public class ReadAffirmsScroll extends Thread{
                 System.out.println(rnd.nextInt(lines.size()*10)%(lines.size()+1));
                 
                 if(SettingsVariables.getInstance().getMsgOrder().equals(Constants.MSG_RANDOM)) {
-                    VisiblePane.lblMessage.setText(lines.get(1));
+                    VisiblePane.getInstance().getLblMessage().setText(lines.get(1));
                 }
                 else {
-                    VisiblePane.lblMessage.setText(lines.get(i));
+                    VisiblePane.getInstance().getLblMessage().setText(lines.get(i));
                 }
                 
                 if(SettingsVariables.getInstance().isStartNshow())
                 	Thread.sleep(SettingsVariables.getInstance().getDisplayTime());
-                VisiblePane.lblMessage.setText("");
+                VisiblePane.getInstance().getLblMessage().setText("");
                 while(!SettingsVariables.getInstance().isStartNshow())
                 	Thread.sleep(2000);
                 if(SettingsVariables.getInstance().isStartNshow())

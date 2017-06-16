@@ -86,7 +86,7 @@ public class ScrollJLabel extends JLabel implements Runnable {
         }
 //        System.out.println(sString);
         this.setText(sString);
-        VisiblePane.lblMessage.repaint();
+        VisiblePane.getInstance().getLblMessage().repaint();
     }
     
     

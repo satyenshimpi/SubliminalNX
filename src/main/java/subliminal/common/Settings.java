@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
  * File : Subliminal.Settings.java
  * Created : Jan 7, 2013

@@ -6,7 +6,7 @@ package subliminal.common;
 
 /**
  *
- * @author Satyen Shimpi
+ * @author Satyen S Shimpi
  */
 public class Constants {
 	//Application related

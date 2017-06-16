@@ -11,11 +11,6 @@
 package subliminal.ui;
 
 import java.awt.Color;
-import java.awt.Container;
-import java.awt.GradientPaint;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Paint;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
@@ -23,7 +18,6 @@ import java.awt.event.MouseMotionAdapter;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.ImageIcon;
-import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import subliminal.TrayMain;
@@ -45,7 +39,7 @@ public class InVisiblePane extends javax.swing.JFrame {
     	setUndecorated(true);
     	setBackground(new Color(0,0,0,0));
     	setLocationRelativeTo(null);
-    	setContentPane( createContentPane());
+    	setContentPane( new TranslucentPanel());
     	setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     	setAlwaysOnTop(true);
     	setFocusableWindowState(false);
@@ -152,7 +146,7 @@ public class InVisiblePane extends javax.swing.JFrame {
     		}
     		@Override
     		public void mouseExited(MouseEvent e) {
-    			System.out.println("Mouse Exite");
+    			System.out.println("Mouse Exit");
     		}
     		
     		@Override
@@ -165,33 +159,7 @@ public class InVisiblePane extends javax.swing.JFrame {
     		}
     	});
 	}
-    
-    private Container createContentPane(){
-    	JPanel panel = new JPanel() {
-            /**
-			 * 
-			 */
-			private static final long serialVersionUID = -6608657692379054499L;
-
-			@Override
-            protected void paintComponent(Graphics g) {
-                if (g instanceof Graphics2D) {
-                    final int R = 240;
-                    final int G = 240;
-                    final int B = 240;
- 
-                    Paint p =
-                        new GradientPaint(0.0f, 0.0f, new Color(R, G, B, 0),
-                            0.0f, getHeight(), new Color(R, G, B, 0), true);
-                    Graphics2D g2d = (Graphics2D)g;
-                    g2d.setPaint(p);
-                    g2d.fillRect(0, 0, getWidth(), getHeight());
-                }
-            }
-        };
-        return panel;
-    }
-    
+        
     public static InVisiblePane getInstance(){
         if(instance==null)
             instance=new InVisiblePane();
